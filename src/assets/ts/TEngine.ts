@@ -1,4 +1,4 @@
-import { AmbientLight, AxesHelper, BoxBufferGeometry, GridHelper, Mesh, MeshStandardMaterial, MOUSE, PerspectiveCamera, Scene, Vector3, WebGLRenderer } from "three"
+import { AmbientLight, AxesHelper, BoxBufferGeometry, GridHelper, Mesh, MeshStandardMaterial, MOUSE, Object3D, PerspectiveCamera, Scene, Vector3, WebGLRenderer } from "three"
 import Stats from 'three/examples/jsm/libs/stats.module'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 //干净的three引擎
@@ -31,12 +31,8 @@ export class TEngine {
         this.camera.up = new Vector3(0, 1, 0)
 
         this.renderer.setSize(dom.offsetWidth, dom.offsetHeight, true)
-        const box: Mesh = new Mesh(
-            new BoxBufferGeometry(10, 10, 10),
-            new MeshStandardMaterial({ color: 'rgb(0,255,0)' })
-        )
-        //颜色和强度
-        const ambientLight: AmbientLight = new AmbientLight('rgb(255,255,255)', 1)
+
+
         //辅助线
         const axesHelper: AxesHelper = new AxesHelper(500)
         //网格线
@@ -44,8 +40,6 @@ export class TEngine {
         //控制器
 
 
-        this.scene.add(box)
-        this.scene.add(ambientLight)
         this.scene.add(axesHelper)
         this.scene.add(gridHelper)
         //通过相机渲染场景
@@ -73,8 +67,6 @@ export class TEngine {
         }
 
         const renderfun = () => {
-            box.position.x += 0.01
-            box.rotation.y += 0.01
             this.camera.position.x += 0.01
             orbitControls.update()
             this.renderer.render(this.scene, this.camera)
@@ -87,5 +79,19 @@ export class TEngine {
 
         dom.appendChild(this.renderer.domElement)
         dom.appendChild(statsdom)
+    }
+
+    //...不定参数
+    addObject(...object: Object3D[]) {
+        object.forEach(item => {
+            this.scene.add(item)
+        })
+    }
+
+    //...不定参数
+    addlight(...light: Object3D[]) {
+        light.forEach(item => {
+            this.scene.add(item)
+        })
     }
 }

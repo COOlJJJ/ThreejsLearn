@@ -5,6 +5,10 @@
 <script lang="ts">
 import { defineComponent, onMounted, ref } from "vue";
 import { TEngine } from "../src/assets/ts/TEngine";
+import { objects } from '../src/assets/ts/TBasicObject'
+import { lights } from '../src/assets/ts/TLights'
+
+
 export default defineComponent({
 
   setup() {
@@ -13,6 +17,8 @@ export default defineComponent({
 
     onMounted(() => {
       const TE = new TEngine(threeTarget.value!);
+      TE.addObject(...objects)
+      TE.addlight(...lights)
     });
 
     return {
