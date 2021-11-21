@@ -26,7 +26,7 @@ export class TEngine {
         //dom.offsetWidth / dom.offsetHeight 宽高
         this.camera = new PerspectiveCamera(45, dom.offsetWidth / dom.offsetHeight, 1, 1000)
         //设置相机位置
-        this.camera.position.set(20, 20, 20)
+        this.camera.position.set(30, 70, 110)
         //看的位置
         this.camera.lookAt(new Vector3(0, 0, 0))
         //向上看
@@ -61,7 +61,7 @@ export class TEngine {
         }
 
         const renderfun = () => {
-            this.camera.position.x += 0.01
+            // this.camera.position.x += 0.01
             orbitControls.update()
             this.renderer.render(this.scene, this.camera)
             //更新帧率

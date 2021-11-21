@@ -35,5 +35,6 @@ const plane: Mesh = new Mesh(
     })
 )
 plane.position.y = 30
+plane.position.x = 20
 plane.scale.set(0.3, 0.3, 0.3)
 objects.push(stage, box, plane)
