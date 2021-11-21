@@ -25,8 +25,8 @@ export const spotLight: SpotLight = new SpotLight(
 //开启阴影 
 spotLight.castShadow = true
 
-pointLight.position.set(20, 20, 20)
+pointLight.position.set(20, 30, 20)
 
-spotLight.position.set(-20, 10, -30)
+spotLight.position.set(-20, 20, -30)
 
 lights.push(ambientLight, pointLight, spotLight)

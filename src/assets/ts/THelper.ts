@@ -12,4 +12,4 @@ const pointLightHelper: PointLightHelper = new PointLightHelper(pointLight, poin
 //聚光灯辅助
 const spotLightHelper: SpotLightHelper = new SpotLightHelper(spotLight, spotLight.color)
 
-helpers.push(axesHelper, gridHelper, pointLightHelper, spotLightHelper)
+helpers.push()
