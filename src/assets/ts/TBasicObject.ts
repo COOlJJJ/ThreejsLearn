@@ -26,6 +26,7 @@ box.receiveShadow = true
 // )
 stage.position.y = -5
 box.position.y = 5
+box.position.z = 35
 
 //相框
 const plane: Mesh = new Mesh(
@@ -34,7 +35,7 @@ const plane: Mesh = new Mesh(
         map: pictureTexture
     })
 )
-plane.position.y = 30
+plane.position.y = 20
 plane.position.x = 20
 plane.scale.set(0.3, 0.3, 0.3)
 objects.push(stage, box, plane)

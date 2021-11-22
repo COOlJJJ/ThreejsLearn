@@ -5,7 +5,7 @@ import {
 export const lights: Object3D[] = []
 
 //颜色和强度
-const ambientLight: AmbientLight = new AmbientLight('rgb(0,0,0)', 1)
+const ambientLight: AmbientLight = new AmbientLight('rgb(255,255,255)', 0.5)
 
 //点光
 export const pointLight: PointLight = new PointLight(
@@ -16,7 +16,7 @@ export const pointLight: PointLight = new PointLight(
 )
 //聚光灯
 export const spotLight: SpotLight = new SpotLight(
-    'rgb(255,255,0)',
+    'rgb(255,255,90)',
     0.7,
     50,
     Math.PI / 180 * 45,

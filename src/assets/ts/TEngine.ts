@@ -19,8 +19,8 @@ export class TEngine {
             antialias: true
         }
         )
-        this.renderer.shadowMap.enabled=true
-        
+        this.renderer.shadowMap.enabled = true
+
         this.dom = dom
         this.scene = new Scene()
         //dom.offsetWidth / dom.offsetHeight 宽高
@@ -80,5 +80,6 @@ export class TEngine {
         object.forEach(item => {
             this.scene.add(item)
         })
+        console.log(this.scene);
     }
 }
